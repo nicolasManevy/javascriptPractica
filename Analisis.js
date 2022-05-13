@@ -11,6 +11,15 @@ const salariosArgSorted= salariosArg.sort(
 function espar(numero){
     return(numero % 2 == 0);
 };
+function calcularMediaAritmetica(lista){
+    const sumalista= lista.reduce(
+        function(valorAcumulado=0, nuevoElemento){
+            return valorAcumulado+ nuevoElemento;
+        }
+    );
+    const promedioLista =sumalista/lista.length;
+    return promedioLista
+       };
 
 function medianaSalarios(lista){
     const mitad= parseInt(lista.length/2);
@@ -24,20 +33,21 @@ function medianaSalarios(lista){
         const personaMitad= lista[mitad];
         return personaMitad;
     }
-}
+};
 //top 10 salarios
-const spliceStart=(salariosArgSorted.length * 90)/100;
+const spliceStart=(salariosArgSorted.length * 90) / 100;
 const spliceCount=salariosArgSorted.length - spliceStart;
+
 const top10salarios= salariosArgSorted.splice(
     spliceStart,
-    spliceCount
+    spliceCount,
 );
 
 const medianatop10= medianaSalarios(top10salarios);
 
-const medianaSalarial= medianaSalarios(salariosArgSorted);
-console.log(
-    medianaSalarial,
-    medianatop10
+const medianaSalarialGeneral= medianaSalarios(salariosArgSorted);
+console.log({
+    medianaSalarialGeneral,
+    medianatop10,
     
-); 
+});

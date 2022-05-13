@@ -36,3 +36,7 @@ argentina.push({
     name:"alejandra",
     salary: 50000,
 })
+argentina.push({
+    name:"nono",
+    salary: 30000,
+})
